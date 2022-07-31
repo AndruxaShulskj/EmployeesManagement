@@ -1,0 +1,124 @@
+﻿<Window
+    x:Class="EmployeesManagement.UI.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:EmployeesManagement.UI.Core.Converters;assembly=EmployeesManagement.UI.Core"
+    Title="Управление списком сотрудников"
+    Width="800"
+    Height="450"
+    Style="{StaticResource WindowStyle}"
+    mc:Ignorable="d"
+    FocusManager.FocusedElement="{Binding ElementName=SearchBox}">
+    <Window.Resources>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+    </Window.Resources>
+    <DockPanel
+        LastChildFill="True"
+        IsEnabled="{Binding Enabled}">
+        <ToolBar
+            DockPanel.Dock="Top"
+            VerticalAlignment="Top"
+            Height="35px">
+            <Label>Поиск по фамилии</Label>
+            <TextBox 
+                Name="SearchBox"
+                Text="{Binding Search.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                VerticalContentAlignment="Center"
+                Height="30px"
+                MinWidth="250px"
+                Margin="5px">
+            </TextBox>
+            <Separator/>
+            <Button
+                Margin="5px 0"
+                Visibility="{Binding Path=CanAdd, Converter={StaticResource BoolToVisibility}}"
+                Command="{Binding AddCommand}">Создать</Button>
+            <Separator/>
+            <CheckBox 
+                Margin="5px 0"
+                IsChecked="{Binding Path=NewTheme, Mode=TwoWay}">
+                Новая тема
+            </CheckBox>
+        </ToolBar>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.Column="0"
+                          Grid.ColumnSpan="2"
+                          VerticalScrollBarVisibility="Auto">
+                <DataGrid
+                    Name="PersonsTable"
+                    Margin="5px 4px  0 0"
+                    GridLinesVisibility="Vertical"
+                    IsReadOnly="True"
+                    HeadersVisibility="Column"
+                    AutoGenerateColumns="False"
+                    ItemsSource="{Binding PersonModels, IsAsync=True, Mode=OneWay}"
+                    SelectedItem="{Binding Path=SelectedPerson, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=Surname}" />
+                        <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}" />
+                        <DataGridTextColumn Header="Отчество" Binding="{Binding Path=SecondName}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+            <StackPanel
+                Grid.Column="2"
+                Margin="20px 2px">
+                <TextBlock
+                    TextAlignment="Center"
+                    TextWrapping="Wrap"
+                    Margin="10px"
+                    Foreground="Red"
+                    Visibility="{Binding ErrorMessage, 
+                        Converter={StaticResource StringToVisibilityConverter}}"
+                    Text="{Binding ErrorMessage}">
+                </TextBlock>
+                <Label>Фамилия</Label>
+                <TextBox
+                    VerticalContentAlignment="Center"
+                    Height="30px"
+                    Text="{Binding SelectedPerson.Surname, Mode=TwoWay}"></TextBox>
+                <Label>Имя</Label>
+                <TextBox
+                    VerticalContentAlignment="Center"
+                    Height="30px"
+                    Text="{Binding SelectedPerson.Name, Mode=TwoWay}"></TextBox>
+                <Label>Отчество</Label>
+                <TextBox
+                    VerticalContentAlignment="Center"
+                    Height="30px"
+                    Text="{Binding SelectedPerson.SecondName, Mode=TwoWay}"></TextBox>
+                <StackPanel
+                    Orientation="Horizontal"
+                    Margin="0 20px 0 0">
+                    <Button
+                        Margin="5"
+                        MinWidth="80px"
+                        Visibility="{Binding Path=CanEdit, Converter={StaticResource BoolToVisibility}}"
+                        Command="{Binding EditCommand}"
+                        CommandParameter="{Binding SelectedPerson}">
+                        Сохранить
+                    </Button>
+                    <Button
+                        Margin="5"
+                        MinWidth="80px"
+                        Visibility="{Binding Path=CanDelete, Converter={StaticResource BoolToVisibility}}"
+                        Command="{Binding DeleteCommand}"
+                        CommandParameter="{Binding SelectedPerson}">
+                        Удалить
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

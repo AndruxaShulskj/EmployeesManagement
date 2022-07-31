@@ -1,0 +1,14 @@
+﻿[
+  {
+    "id": 1,
+    "login": "admin",
+    "salt": "u7EzzOdhp3Lbl0BvIizR47/o7tjWUlIfHkZ5bY+oYzhcj7PaTBD+IA==",
+    "personId": 1
+  },
+  {
+    "id": 2,
+    "login": "user",
+    "salt": "u7EzzOdhp3Lbl0BvIizR47/o7tjWUlIfHkZ5bY+oYzhcj7PaTBD+IA==",
+    "personId": 2
+  }
+]

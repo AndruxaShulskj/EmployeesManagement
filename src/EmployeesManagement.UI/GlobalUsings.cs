@@ -1,0 +1,10 @@
+﻿global using Microsoft.Extensions.DependencyInjection;
+global using System;
+global using System.Runtime.InteropServices;
+global using System.Security;
+global using System.Windows;
+global using System.Windows.Input;
+global using EmployeesManagement.UI.Core.MVVM.ViewModels;
+global using EmployeesManagement.UI.Views;
+global using EmployeesManagement.UI.Models;
+global using System.Threading.Tasks;

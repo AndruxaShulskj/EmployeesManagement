@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{41C5EBD8-8D8E-4608-85BB-F518831641FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesManagement.DataAccess", "src\EmployeesManagement.DataAccess\EmployeesManagement.DataAccess.csproj", "{355A0527-8DCA-4FCD-B705-035CD9362228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesManagement.UI", "src\EmployeesManagement.UI\EmployeesManagement.UI.csproj", "{24F61A5A-8D45-44A7-833B-9505234DA389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesManagement.UI.Core", "src\EmployeesManagement.UI.Core\EmployeesManagement.UI.Core.csproj", "{14153525-0DAE-41D2-A6B3-9A9769EC732A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesManagement.Business", "src\EmployeesManagement.Business\EmployeesManagement.Business.csproj", "{313E2D9B-5BE0-4288-8DDE-3ECC0D12C187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesManagement.Common", "src\EmployeesManagement.Common\EmployeesManagement.Common.csproj", "{6B875A82-C008-47F9-A21D-B2E01F2AF9DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{41068495-48DB-4D86-86CF-DA180679C0DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeesManagement.Business.Tests", "tests\EmployeesManagement.Business.Tests\EmployeesManagement.Business.Tests.csproj", "{6CE02962-EDDD-4A6B-8257-CC5E0B71E0F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{355A0527-8DCA-4FCD-B705-035CD9362228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{355A0527-8DCA-4FCD-B705-035CD9362228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{355A0527-8DCA-4FCD-B705-035CD9362228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{355A0527-8DCA-4FCD-B705-035CD9362228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F61A5A-8D45-44A7-833B-9505234DA389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F61A5A-8D45-44A7-833B-9505234DA389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F61A5A-8D45-44A7-833B-9505234DA389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F61A5A-8D45-44A7-833B-9505234DA389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14153525-0DAE-41D2-A6B3-9A9769EC732A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14153525-0DAE-41D2-A6B3-9A9769EC732A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14153525-0DAE-41D2-A6B3-9A9769EC732A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14153525-0DAE-41D2-A6B3-9A9769EC732A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313E2D9B-5BE0-4288-8DDE-3ECC0D12C187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313E2D9B-5BE0-4288-8DDE-3ECC0D12C187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313E2D9B-5BE0-4288-8DDE-3ECC0D12C187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313E2D9B-5BE0-4288-8DDE-3ECC0D12C187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B875A82-C008-47F9-A21D-B2E01F2AF9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B875A82-C008-47F9-A21D-B2E01F2AF9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B875A82-C008-47F9-A21D-B2E01F2AF9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B875A82-C008-47F9-A21D-B2E01F2AF9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CE02962-EDDD-4A6B-8257-CC5E0B71E0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE02962-EDDD-4A6B-8257-CC5E0B71E0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE02962-EDDD-4A6B-8257-CC5E0B71E0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE02962-EDDD-4A6B-8257-CC5E0B71E0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{355A0527-8DCA-4FCD-B705-035CD9362228} = {41C5EBD8-8D8E-4608-85BB-F518831641FC}
+		{24F61A5A-8D45-44A7-833B-9505234DA389} = {41C5EBD8-8D8E-4608-85BB-F518831641FC}
+		{14153525-0DAE-41D2-A6B3-9A9769EC732A} = {41C5EBD8-8D8E-4608-85BB-F518831641FC}
+		{313E2D9B-5BE0-4288-8DDE-3ECC0D12C187} = {41C5EBD8-8D8E-4608-85BB-F518831641FC}
+		{6B875A82-C008-47F9-A21D-B2E01F2AF9DD} = {41C5EBD8-8D8E-4608-85BB-F518831641FC}
+		{6CE02962-EDDD-4A6B-8257-CC5E0B71E0F2} = {41068495-48DB-4D86-86CF-DA180679C0DC}
+	EndGlobalSection
+EndGlobal
